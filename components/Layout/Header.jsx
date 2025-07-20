@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useState } from 'react'
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -42,7 +43,11 @@ const Header = () => {
                     <button>About</button>
                   </li>
                   <li>
+                    <Link href={'/pricing'
+}>
+                   
                     <button>Pricing</button>
+                     </Link>
                   </li>
                 </ul>
               </div>
