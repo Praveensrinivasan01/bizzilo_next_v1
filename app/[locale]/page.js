@@ -1,14 +1,8 @@
 "use client";
-import Image from "next/image";
-import React from 'react'
-
-
-
-
-
-
-
-
+// import Image from "next/image";
+import Overlay from 'react-bootstrap/Overlay';
+import Popover from 'react-bootstrap/Popover';
+import { useState, useRef } from "react";
 // import Flipkart from "../../assets/images/flipkart.png";
 // import Amazon from "../../assets/images/amazon.png";
 // import Whatsapp from "../../assets/images/whatsapp.png";
@@ -22,8 +16,19 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import BlogSlider from "../../components/BlogSlider";
 
-export default function Home() {
 
+
+
+
+export default function Home() {
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
   return (
     <>
 
@@ -104,7 +109,7 @@ export default function Home() {
         <div className='container'>
           <div className='row'>
             <div className='col-lg-5'>
-              <div className='mobspaceMb_34'>
+              <div className='mobspaceMb_24'>
                 <h2 className='fontSize36 fontWeight600 sootytext_clr mb_24'>Modules Overview</h2>
                 <p className='fontSize18 fontWeight400 caviarText_clr'>Transform every transaction into an opportunity with our intelligence layer that drives engagement, loyalty, and revenue.</p>
               </div>
@@ -229,31 +234,38 @@ export default function Home() {
             </div>
             <div className='col-lg-6 '>
 
+              {/* <div className="orbit-wrapper">
 
+                <div className="orbitFrame">
+                  <div className="center-icon">
+                    <img src="/assets/images/main_logo.png" alt="Center Logo" />
+                  </div>
+                  <div className="semiCircleimg">
+                    <img src="/assets/images/semiCircle.svg" alt="semiCircle" />
+                  </div>
 
-              {/* <div className="carousel-container">
-                <div className="central-icon">
-                  <img src="/images/center-logo.png" alt="Center Logo" />
                 </div>
 
-                <svg className="arc" viewBox="0 0 300 500">
-                  <path
-                    d="M 20 20 Q 150 250, 20 480"
-                    stroke="#ccc"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </svg>
 
-                <div className="steps">
-                  {items.map((item, index) => (
-                    <div className={`step step-${index}`} key={index}>
-                      <img src={item.logo} alt={item.name} />
-                      <span>{item.name}</span>
-                    </div>
-                  ))}
+                <div className="orbit-item pos" style={{ top: '50px', left: '190px' }}>
+                  <img src="/assets/images/pos_logo.png" alt="POS" />
+                </div>
+                <div className="orbit-item ecom" style={{ top: '120px', left: '220px' }}>
+                  <img src="/assets/images/ecom.png" alt="Ecom" />
+                </div>
+                <div className="orbit-item flipkart" style={{ top: '180px', left: '240px' }}>
+                  <img src="/assets/images/flipkart.png" alt="Flipkart" />
+                </div>
+                <div className="orbit-item amazon" style={{ top: '260px', left: '210px' }}>
+                  <img src="/assets/images/amazon.png" alt="Amazon" />
+                </div>
+                <div className="orbit-item whatsapp" style={{ top: '320px', left: '150px' }}>
+                  <img src="/assets/images/whatsapp.png" alt="WhatsApp" />
                 </div>
               </div> */}
+
+
+
               <div className='textalign_center'>
 
                 <img src="/assets/images/goOmnichannel.png" alt="Goomnichannel" />
@@ -391,7 +403,11 @@ export default function Home() {
       <section className='integrations_sec'>
         <div className='container'>
           <h2>Integrations</h2>
+          <div className='integrationsframe'>
 
+            <div className='integrations_img'>
+              <img src="/assets/images/integrationsCenter_logo.png" alt='integrationsCenter_logo' />
+                  </div>
           <div className='integrationsParent'>
             <div className='integrationsIconframe'>
               <img src="/assets/images/phonepe.png" alt='Phonepe' />
@@ -426,6 +442,8 @@ export default function Home() {
             <div className='integrationsIconframe'>
               <img src="/assets/images/shiprocket.png" alt='Shiprocket' />
             </div>
+          </div>
+
           </div>
         </div>
       </section>
@@ -500,58 +518,57 @@ export default function Home() {
           </div>
           <div className='yourAIPowerhouseGrid'>
             <div className='yourAIPowerhouseitem'>
-              <button>Chat & Voice Commerce</button>
-              <h3>Talk. Tap.Transact</h3>
+                <button>Chat & Voice Commerce</button>
+                <h3>Talk. Tap.Transact</h3>
 
-              <div className='yourAIPowerhouseHover'>
-                <img src="/assets/images/hovergradiant.png" alt='Hovergradiant' />
+                <div className='yourAIPowerhouseHover'>
+                  <img src="/assets/images/hovergradiant.png" alt='Hovergradiant' />
+                </div>
               </div>
+            <div className='yourAIPowerhouseitem'>
+                <button>Dynamic Pricing Engine</button>
+                <h3>Maximize Margins in Real Time</h3>
+                <p>AI analyzes demand, competitor prices & inventory to suggest optimal prices—always stay competitive.</p>
             </div>
             <div className='yourAIPowerhouseitem'>
-              <button>Dynamic Pricing Engine</button>
-              <h3>Maximize Margins in Real Time</h3>
-              <p>AI analyzes demand, competitor prices & inventory to suggest optimal prices—always stay competitive.</p>
+                <button>Hyper-Personalized</button>
+                <h3>Your Best Seller Is Just One Click Away</h3>
+                <p>Location-, behavior- and season-based product picks that turn browsers into buyers.</p>
+            </div>
+            <div className='yourAIPowerhouseitem'>
+                <button>Hyper-Personalized</button>
+                <h3>Demand Forecasting</h3>
+            </div>
+            <div className='yourAIPowerhouseitem'>
+                <button>Sentiment IQ</button>
+                <h3>Happy Customers, Always</h3>
+                <p>Multilingual, emotion-aware chat support that deflects ticket volume by </p>
 
+                <h4>up to </h4>
+                <h2>70%</h2>
             </div>
             <div className='yourAIPowerhouseitem'>
-              <button>Hyper-Personalized</button>
-              <h3>Your Best Seller Is Just One Click Away</h3>
-              <p>Location-, behavior- and season-based product picks that turn browsers into buyers.</p>
+                <button>Content Generator</button>
+                <h3>Descriptions That Sell Themselves</h3>
             </div>
             <div className='yourAIPowerhouseitem'>
-              <button>Hyper-Personalized</button>
-              <h3>Demand Forecasting</h3>
+                <button>Smart Fraud & Anomaly Alert</button>
+                <h3>Sleep Easy, We’ve Got You Covered</h3>
+                <p>Real-time fraud detection on payments, returns, and unusual order patterns.</p>
             </div>
             <div className='yourAIPowerhouseitem'>
-              <button>Sentiment IQ</button>
-              <h3>Happy Customers, Always</h3>
-              <p>Multilingual, emotion-aware chat support that deflects ticket volume by </p>
-
-              <h4>up to </h4>
-              <h2>70%</h2>
+                <button>Conversational BI & Insights</button>
+                <h3>Ask, Don’t Search Which SKUs are trending this week?</h3>
+                <p>Get visual answers in charts or human-friendly bullets</p>
             </div>
             <div className='yourAIPowerhouseitem'>
-              <button>Content Generator</button>
-              <h3>Descriptions That Sell Themselves</h3>
+                <button>AI Video & GIF Maker</button>
+                <h3>Bring Your Products to Life</h3>
+                <p>Auto-generate short demo videos or product GIFs for social & ads-no video team needed.</p>
             </div>
             <div className='yourAIPowerhouseitem'>
-              <button>Smart Fraud & Anomaly Alert</button>
-              <h3>Sleep Easy, We’ve Got You Covered</h3>
-              <p>Real-time fraud detection on payments, returns, and unusual order patterns.</p>
-            </div>
-            <div className='yourAIPowerhouseitem'>
-              <button>Conversational BI & Insights</button>
-              <h3>Ask, Don’t Search Which SKUs are trending this week?</h3>
-              <p>Get visual answers in charts or human-friendly bullets</p>
-            </div>
-            <div className='yourAIPowerhouseitem'>
-              <button>AI Video & GIF Maker</button>
-              <h3>Bring Your Products to Life</h3>
-              <p>Auto-generate short demo videos or product GIFs for social & ads-no video team needed.</p>
-            </div>
-            <div className='yourAIPowerhouseitem'>
-              <button>Voice-Activated Dashboard</button>
-              <h3>Data at the Speed of Sound</h3>
+                <button>Voice-Activated Dashboard</button>
+                <h3>Data at the Speed of Sound</h3>
             </div>
           </div >
 
@@ -579,16 +596,28 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div>
-                  <div className='profiledp'>
-                    <img src="/assets/images/pavi.png" alt='Pavidp' />
-
-                    <div className="custom_tooltiptext">
-                      <h4>Ananth</h4>
-                      <h5>DIRECTOR</h5>
-                      <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
-                    </div>
-
+                <div ref={ref}>
+                  <div className='profiledp' >
+                    <button onClick={handleClick} className='emptyBtn'>
+                      <img src="/assets/images/pavi.png" alt='Pavidp' />
+                    </button>
+                    <Overlay
+                      show={show}
+                      target={target}
+                      placement="bottom"
+                      container={ref}
+                      containerPadding={20}
+                    >
+                      <Popover id="popover-contained">
+                        <Popover.Body>
+                          <div className="custom_tooltiptext">
+                            <h4>Ananth</h4>
+                            <h5>DIRECTOR</h5>
+                            <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
+                          </div>
+                        </Popover.Body>
+                      </Popover>
+                    </Overlay>
                   </div>
                 </div>
 
@@ -599,14 +628,28 @@ export default function Home() {
                 </div>
 
 
-                <div>
+                <div ref={ref}>
                   <div className='profiledp'>
-                    <img src="/assets/images/praveen.png" alt='Praveendp' />
-                    <div className="custom_tooltiptext">
-                      <h4>Ananth</h4>
-                      <h5>DIRECTOR</h5>
-                      <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
-                    </div>
+                    <button onClick={handleClick} className='emptyBtn'>
+                      <img src="/assets/images/praveen.png" alt='Praveendp' />
+                    </button>
+                    <Overlay
+                      show={show}
+                      target={target}
+                      placement="bottom"
+                      container={ref}
+                      containerPadding={20}
+                    >
+                      <Popover id="popover-contained">
+                        <Popover.Body>
+                          <div className="custom_tooltiptext">
+                            <h4>Ananth</h4>
+                            <h5>DIRECTOR</h5>
+                            <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
+                          </div>
+                        </Popover.Body>
+                      </Popover>
+                    </Overlay>
                   </div>
                 </div>
 
@@ -632,30 +675,58 @@ export default function Home() {
                 <div>
                   <div className='emptyDp'></div>
                 </div>
-                <div>
-                  <div>
+                <div >
+                  <div ref={ref}>
                     <div className='profiledp'>
-                      <img src="/assets/images/saravana.png" alt='Saravanadp' />
+                      <button onClick={handleClick} className='emptyBtn'>
+                        <img src="/assets/images/saravana.png" alt='Saravanadp' />
+                      </button>
 
-                      <div className="custom_tooltiptext">
-                        <h4>Ananth</h4>
-                        <h5>DIRECTOR</h5>
-                        <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
-                      </div>
+
+                      <Overlay
+                        show={show}
+                        target={target}
+                        placement="bottom"
+                        container={ref}
+                        containerPadding={20}
+                      >
+                        <Popover id="popover-contained">
+                          <Popover.Body>
+                            <div className="custom_tooltiptext">
+                              <h4>Ananth</h4>
+                              <h5>DIRECTOR</h5>
+                              <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
+                            </div>
+                          </Popover.Body>
+                        </Popover>
+                      </Overlay>
 
 
                     </div>
                   </div>
-                  <div>
+                  <div ref={ref}>
                     <div className='profiledp'>
-                      <img src="/assets/images/hema.png" alt='Hemadp' />
+                      <button onClick={handleClick} className='emptyBtn'>
+                        <img src="/assets/images/hema.png" alt='Hemadp' />
+                      </button>
 
-                      <div className="custom_tooltiptext custom_tooltiptextRight">
-                        <h4>Ananth</h4>
-                        <h5>DIRECTOR</h5>
-                        <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
-                      </div>
-
+                      <Overlay
+                        show={show}
+                        target={target}
+                        placement="bottom"
+                        container={ref}
+                        containerPadding={20}
+                      >
+                        <Popover id="popover-contained">
+                          <Popover.Body>
+                            <div className="custom_tooltiptext">
+                              <h4>Ananth</h4>
+                              <h5>DIRECTOR</h5>
+                              <p>“Implementing this ERP app was a game changer it optimized work -flow, enhanced collaboration and provided invaluable insights for our business expansion impressive tool.</p>
+                            </div>
+                          </Popover.Body>
+                        </Popover>
+                      </Overlay>
 
                     </div>
                   </div>
@@ -668,7 +739,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="resources_sec">
         <div className='container'>
           <div className="sectionheader">
             <h2 className='textalign_center'>Resources</h2>
@@ -684,9 +755,9 @@ export default function Home() {
               <Tab eventKey="blog" title="Blog">
 
 
-<BlogSlider/>
+                <BlogSlider />
 
-     
+
               </Tab>
               <Tab eventKey="caseStudy" title="Case Study">
                 Case Study

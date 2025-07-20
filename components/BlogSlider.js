@@ -5,6 +5,18 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const BlogSlider = () => {
 
+    const NextArrow = ({ onClick }) => (
+        <div className="custom-arrow next" onClick={onClick}>
+            ▶
+        </div>
+    );
+
+    const PrevArrow = ({ onClick }) => (
+        <div className="custom-arrow prev" onClick={onClick}>
+            ◀
+        </div>
+    );
+
     const blogSlider = {
         dots: false,
         arrows: true,
@@ -42,8 +54,8 @@ const BlogSlider = () => {
     };
 
   return (
-    <div>
-          <Slider {...blogSlider}>
+    <div >
+          <Slider {...blogSlider} className='blogSlider'>
 
               <div className='blogitem'>
                   <div className='blogImg'>

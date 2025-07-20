@@ -12,12 +12,12 @@ const Header = () => {
 
 
   return (
-    <div className="sticky-top">
-      <header>
+    < >
+      <header className="sticky-top">
         <div className='container'>
           <nav>
             <div className='mobileHeader'>
-              <div>
+              <div className='brandlogo'>
                 <img src="/assets/images/bizzilo_logo.png" alt='BizziloLogo' />
               </div>
 
@@ -56,7 +56,7 @@ const Header = () => {
           </nav>
         </div>
       </header>
-    </div>
+    </>
   )
 }
 
