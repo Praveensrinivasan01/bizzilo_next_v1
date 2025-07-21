@@ -2804,6 +2804,10 @@ ul.coveringIndustriesTabs li button:hover {
     .footerQuickAction {
         display: block;
         padding: 16px 0px;
+        position: sticky;
+        bottom: 0;
+        z-index: 9999;
+        background: var(--white_clr);
     }
 
     .footerQuickAction .mainbutton {
@@ -3604,6 +3608,7 @@ ul.coveringIndustriesTabs li button:hover {
         font-size: 20px;
         font-weight: 500;
     }
+
     .blackHeader {
         padding: 16px 0;
     }
