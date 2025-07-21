@@ -2803,11 +2803,12 @@ ul.coveringIndustriesTabs li button:hover {
 
     .footerQuickAction {
         display: block;
-        padding: 16px 0px;
+        padding: 14px 0px;
         position: sticky;
         bottom: 0;
         z-index: 9999;
         background: var(--white_clr);
+        border: 1px solid #d0d0d040;
     }
 
     .footerQuickAction .mainbutton {
