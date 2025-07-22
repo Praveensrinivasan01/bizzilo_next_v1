@@ -52,7 +52,9 @@ const Header = () => {
                 </ul>
               </div>
               <div className='displayInlineFlex alignItem_center gap16'>
-                <div><button className='mainbutton transparentbtn'>Sign in</button></div>
+                <div>
+                  <Link href={'/account-creation'}>
+                    <button className='mainbutton transparentbtn'>Sign in</button></Link></div>
                 <div>
                   <button className='mainbutton ruinedSmoresbtn'>Sign Up Now</button>
                 </div>

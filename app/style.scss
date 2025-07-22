@@ -61,6 +61,7 @@ html {
     --brightNavyBlueFilter: brightness(0) saturate(100%) invert(34%) sepia(80%) saturate(1189%) hue-rotate(185deg) brightness(93%) contrast(91%);
     --whiteFilter: brightness(0) saturate(100%) invert(100%) sepia(16%) saturate(7493%) hue-rotate(183deg) brightness(123%) contrast(96%);
     --ruinedSmoresFilter: brightness(0) saturate(100%) invert(5%) sepia(3%) saturate(5900%) hue-rotate(193deg) brightness(89%) contrast(96%);
+    --blackFilter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(20%) hue-rotate(334deg) brightness(96%) contrast(104%);
 }
 
 html,
@@ -147,6 +148,9 @@ body {
     height: 100%;
 }
 
+.width14px {
+    width: 14px;
+}
 
 .mb_40 {
     margin-bottom: 40px;
@@ -172,12 +176,20 @@ body {
     margin-bottom: 20px !important;
 }
 
+.mb_32 {
+    margin-bottom: 32px !important;
+}
+
 .mb_74 {
     margin-bottom: 74px;
 }
 
 .mb_16 {
     margin-bottom: 16px !important;
+}
+
+.mb_6 {
+    margin-bottom: 6px !important;
 }
 
 .margin_auto {
@@ -338,11 +350,45 @@ body {
     margin: 0;
 }
 
+.blackText_Clr {
+    color: var(--black_clr);
+    line-height: 1.5;
+    margin: 0;
+}
+
 .brightNavyBlueFilter {
     filter: var(--brightNavyBlueFilter);
 }
 
+.blackFilter {
+    filter: var(--blackFilter);
+}
 
+
+.mainInput {
+    border-radius: 4px;
+    border: 1px solid var(--orochimaru_clr);
+    background-color: transparent;
+
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--ruinedSmores_clr);
+
+    outline: unset;
+    padding: 0 16px;
+    height: 40px;
+    width: 100%;
+}
+
+.labeltext {
+    color: rgba(102, 102, 102, 0.80);
+    font-family: var(--poppinsFontfamily);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
 
 @media (min-width: 1200px) {
     .container {
@@ -369,6 +415,9 @@ body {
     outline: unset;
 }
 
+.textDecoration_unset {
+    text-decoration: unset;
+}
 
 .btnBoxShadow {
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
@@ -2778,19 +2827,19 @@ ul.coveringIndustriesTabs li button:hover {
     width: 20px;
 }
 
-.plansframe.startplan {
+.startplan {
     background: var(--trueskyGloxym_clr);
 }
 
-.plansframe.growplan {
+.growplan {
     background: var(--cherishedOne_clr);
 }
 
-.plansframe.accelerateplan {
+.accelerateplan {
     background: var(--dynamicYellow_clr);
 }
 
-.plansframe.scaleplan {
+.scaleplan {
     background: var(--violetHeaven_clr);
 }
 
@@ -2798,8 +2847,147 @@ ul.coveringIndustriesTabs li button:hover {
     padding: 20px 0px 145px;
 }
 
+.accountCreation_sec {
+    padding: 45px 0px;
+}
+
+.accountCreationFrame {
+    border-radius: 10px;
+    background: var(--white_clr);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.15);
+    padding: 34px;
+}
+
+.accountCreationFrame h2 {
+    color: var(--ruinedSmores_clr);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.loginBtn {
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--ruinedSmores_clr) 50.74%, var(--scriptInk_clr) 80.74%, var(--ruinedSmores_clr) 99.82%);
+    border: 1px solid var(--ruinedSmores_clr);
+    color: var(--white_clr);
+    height: 50px;
+    outline: unset;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    width: 100%;
+}
+
+
+.balljumbingFrame {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+$ball-size: 204px;
+$ball-motion: 70px;
+$ball-cb: cubic-bezier(0.42, 0, 0.58, 1);
+
+@keyframes bounceBall {
+    0% {
+        transform: translateY(-#{$ball-motion}) scale(1, 1);
+    }
+
+    15% {
+        transform: translateY(-#{$ball-motion * .8}) scale(1, 1);
+    }
+
+    45% {
+        transform: translateY($ball-motion) scale(1, 1);
+    }
+
+    50% {
+        transform: translateY(#{$ball-motion + ($ball-motion * .05)}) scale(1, .92);
+    }
+
+    55% {
+        transform: translateY($ball-motion) scale(1, .95);
+    }
+
+    85% {
+        transform: translateY(-#{$ball-motion * .8}) scale(1, 1);
+    }
+
+    95% {
+        transform: translateY(-#{$ball-motion}) scale(1, 1);
+    }
+
+    100% {
+        transform: translateY(-#{$ball-motion}) scale(1, 1);
+    }
+}
+
+.ball {
+    animation-name: bounceBall;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: $ball-cb;
+    border-radius: 50%;
+    height: $ball-size;
+    position: relative;
+    transform: translateY(-#{$ball-motion});
+    transform-style: preserve-3d;
+    width: $ball-size;
+    z-index: 1;
+}
+
+@keyframes bounceShadow {
+    0% {
+        filter: blur(3px);
+        opacity: .6;
+        transform: translateY(#{$ball-motion + ($ball-size * .05)}) scale(.5, .5);
+    }
+
+    45% {
+        filter: blur(1px);
+        opacity: .9;
+        transform: translateY(#{$ball-motion + ($ball-size * .05)}) scale(1, 1);
+    }
+
+    55% {
+        filter: blur(1px);
+        opacity: .9;
+        transform: translateY(#{$ball-motion + ($ball-size * .05)}) scale(1, 1);
+    }
+
+    100% {
+        filter: blur(3px);
+        opacity: .6;
+        transform: translateY(#{$ball-motion + ($ball-size * .05)}) scale(.5, .5);
+    }
+}
+
+
+.ballshadow {
+    animation-name: bounceShadow;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: $ball-cb;
+    width: 638px;
+    height: 114px;
+    border-radius: 638px;
+    background: radial-gradient(40.83% 40.83% at 50% 50%, #D0D0D0 0%, #EEE 44.73%, #F2F2F2 74.58%, #FFF 100%);
+    // height: #{$ball-size * .1};
+    transform: translateY(#{$ball-motion + ($ball-size * .05)});
+    // width: #{$ball-size * .9};
+}
+
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
+
+    .mb_32 {
+        margin-bottom: 24px !important;
+    }
 
     .footerQuickAction {
         display: block;
@@ -3613,6 +3801,44 @@ ul.coveringIndustriesTabs li button:hover {
     .blackHeader {
         padding: 16px 0;
     }
+
+    .accountCreationFrame {
+        padding: 24px;
+    }
+
+    .accountCreationFrame h2 {
+        margin-bottom: 24px;
+        font-size: 16px;
+
+    }
+
+    $ball-size: 120px;
+    $ball-motion: 40px;
+    $ball-cb: cubic-bezier(0.42, 0, 0.58, 1);
+
+.balljumbingFrame{
+    padding-bottom: 100px;
+}
+  
+    .ballshadow {
+        width: 319px;
+        height: 57px;
+    }
+
+    .ball {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ball img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .loginBtn {
+        height: 44px;
+        font-size: 14px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -3943,6 +4169,8 @@ ul.coveringIndustriesTabs li button:hover {
     .marketingToolsGrid .marketingToolsItem {
         border-right: unset;
     }
+
+
 }
 
 @media (min-width: 992px) and (max-width: 1026px) {
@@ -3983,75 +4211,3 @@ ul.coveringIndustriesTabs li button:hover {
 }
 
 @media (min-width: 1400px) and (max-width: 1535px) {}
-
-
-
-
-
-
-.orbit-wrapper {
-    position: relative;
-    text-align: center;
-    // width: 100%;
-    // max-width: 600px;
-    // height: 400px;
-    // margin: 0 auto;
-}
-
-.orbitFrame {
-    display: inline-flex;
-    align-items: center;
-}
-
-.semiCircleimg {
-    position: relative;
-    right: 55px;
-}
-
-.center-icon {
-    // position: absolute;
-    // top: 50%;
-    // left: 60px;
-    // transform: translateY(-50%);
-    width: 110px;
-    height: 110px;
-    background: var(--white_clr);
-    border-radius: 50%;
-    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .5s;
-    transition-property: box-shadow;
-}
-
-
-// .center-icon img {
-//     width: 30px;
-// }
-
-.arc-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 400px;
-    z-index: 0;
-}
-
-.orbit-item {
-    position: absolute;
-    background: #fff;
-    border-radius: 12px;
-    padding: 6px 12px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-// .orbit-item img {
-//     height: 20px;
-// }
