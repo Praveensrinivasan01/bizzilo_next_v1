@@ -26,7 +26,7 @@ const page = () => {
                                         <div className='col-lg-4 '>
                                             <div className='monthlyPricingItem '>
                                                 <label>Recommended</label>
-                                                <div className='monthlyPricingImg'>
+                                                <div className='monthlyPricingImg startplan'>
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Start</h3>
@@ -40,7 +40,7 @@ const page = () => {
                                         <div className='col-lg-4'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
-                                                <div className='monthlyPricingImg'>
+                                                <div className='monthlyPricingImg growplan'>
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Grow</h3>
@@ -54,7 +54,7 @@ const page = () => {
                                         <div className='col-lg-4 '>
                                             <div className='monthlyPricingItem recommendedFrame'>
                                                 <label>Recommended</label>
-                                                <div className='monthlyPricingImg'>
+                                                <div className='monthlyPricingImg accelerateplan'>
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Accelerate</h3>
@@ -68,7 +68,7 @@ const page = () => {
                                         <div className='col-lg-4 offset-lg-1'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
-                                                <div className='monthlyPricingImg'>
+                                                <div className='monthlyPricingImg scaleplan'>
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Scale</h3>
@@ -82,7 +82,7 @@ const page = () => {
                                         <div className='col-lg-4'>
                                             <div className='monthlyPricingItem'>
                                                 <label>Recommended</label>
-                                                <div className='monthlyPricingImg'>
+                                                <div className='monthlyPricingImg enterprisePlan'>
                                                     <img src="/assets/images/star_icon.svg" />
                                                 </div>
                                                 <h3>Enterprise Plan</h3>
