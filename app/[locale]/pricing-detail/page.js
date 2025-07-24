@@ -6,7 +6,6 @@ const page = () => {
         <>
             <section className='pricingDetail_sec'>
                 <div className='container'>
-
                     <Link href="#" className='mb_32 displayInlineFlex alignItem_center gap12  blackText_Clr fontSize16 fontWeight600 textDecoration_unset'>
                         <img className='blackFilter width14px' src="/assets/images/leftarrow.svg" alt='leftarrow' />
                         <span>Back</span>
@@ -106,10 +105,7 @@ const page = () => {
                             </Link>
                         </div>
                     </div>
-
                     <h5 className='fontSize20 fontWeight400 rockabillyText_clr mb_20'>Add-on to your plans</h5>
-
-
                     <div className='row'>
                         <div className='col-lg-4'>
                             <div className='addtoyourplansItem'>

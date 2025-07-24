@@ -23,7 +23,7 @@ const page = () => {
                                 <span>Back</span>
                             </Link>
 
-                            <h2>Login</h2>
+                            <h2 className='ruinedSmoresText_clr fontSize18 fontWeight700 mb_32'>Login</h2>
 
                             <form>
                                 <div className='mb_24'>
