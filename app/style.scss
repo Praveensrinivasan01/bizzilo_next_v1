@@ -58,10 +58,10 @@ html {
     --cloudedVisionColor: #d1d1d1;
     --cascadingWhite_Clr: #F6F6F6;
     --coveredInPlatinumColor: #b9b9b9;
-    --libertyBlue_clr:#0F172C;
-    --squant_clr:#666666;
-    --blackMana_clr:#858585;
-
+    --libertyBlue_clr: #0F172C;
+    --squant_clr: #666666;
+    --blackMana_clr: #858585;
+    --smokeScreen_clr: #AFAEAF;
     --brightNavyBlueFilter: brightness(0) saturate(100%) invert(34%) sepia(80%) saturate(1189%) hue-rotate(185deg) brightness(93%) contrast(91%);
     --whiteFilter: brightness(0) saturate(100%) invert(100%) sepia(16%) saturate(7493%) hue-rotate(183deg) brightness(123%) contrast(96%);
     --ruinedSmoresFilter: brightness(0) saturate(100%) invert(5%) sepia(3%) saturate(5900%) hue-rotate(193deg) brightness(89%) contrast(96%);
@@ -159,9 +159,11 @@ body {
 .mb_40 {
     margin-bottom: 40px;
 }
+
 .mb_50 {
     margin-bottom: 50px !important;
 }
+
 .mb_80 {
     margin-bottom: 80px !important;
 }
@@ -177,9 +179,11 @@ body {
 .mb_24 {
     margin-bottom: 24px !important;
 }
+
 .mb_34 {
     margin-bottom: 34px !important;
 }
+
 .mb_20 {
     margin-bottom: 20px !important;
 }
@@ -199,12 +203,15 @@ body {
 .mb_16 {
     margin-bottom: 16px !important;
 }
+
 .mb_12 {
     margin-bottom: 12px !important;
 }
+
 .mb_8 {
     margin-bottom: 8px !important;
 }
+
 .mb_6 {
     margin-bottom: 6px !important;
 }
@@ -311,10 +318,16 @@ body {
     list-style: none;
 }
 
-.blackManatext_clr{
+.blackManatext_clr {
     color: var(--blackMana_clr);
-        line-height: 1.5;
-        margin: 0;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.darkOrchestra_clr{
+color: var(--darkOrchestra_clr);
+    line-height: 1.5;
+    margin: 0;
 }
 
 .ancestralWatertext_clr {
@@ -407,6 +420,61 @@ body {
     height: 40px;
     width: 100%;
 }
+
+
+
+
+
+/* Input Group Wrapper */
+.inputMate {
+    display: flex;
+    align-items: stretch;
+    // width: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+/* Prepend and Append */
+.inputMatePrepend,
+.inputMateAppend {
+    display: flex;
+    align-items: center;
+        background: var(--white_clr);
+}
+
+.inputMateAppend {
+    border-left: 1px solid transparent;
+    padding-right: 20px;
+}
+
+.inputMatePrepend {
+    border-right: 1px solid transparent;
+    padding-left: 20px;
+}
+
+/* Input Field */
+.inputMate input {
+    background: var(--white_clr);
+    flex: 1;
+    width: 100%;
+    border: 1px solid var(--white_clr);
+    outline: none;
+    padding: 0px 16px 0px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--black_clr);
+    height: 44px;
+}
+.inputMate input::placeholder{
+    color: var(--smokeScreen_clr);
+}
+.inputMate>.inputMateAppend>.inputMateText,
+.inputMate>.inputMatePrepend>.inputMateText {
+    line-height: 1.5;
+}
+
+
 
 .labeltext {
     color: rgba(102, 102, 102, 0.80);
@@ -2641,6 +2709,11 @@ ul.coveringIndustriesTabs li button:hover {
     background: var(--black_clr);
     padding: 24px 0px;
 }
+.blackHeader nav{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .blackHeader h2 {
     font-size: 24px;
@@ -3116,6 +3189,7 @@ ul.plansdetailCount li {
     line-height: 1.5;
     margin-bottom: 4px;
 }
+
 .addtoyourplansItem>div:last-child p {
     color: var(--rockabilly_clr);
     font-size: 12px;
@@ -3174,6 +3248,7 @@ ul.plansdetailCount li {
     border: 1px solid var(--libertyBlue_clr);
     // background-color: var(--libertyBlue_clr);
 }
+
 .prefer_method input[type='radio']:checked+label::before {
     color: var(--libertyBlue_clr);
 }
@@ -3182,7 +3257,7 @@ ul.plansdetailCount li {
     background-image: url('/assets/images/radioChecked.svg');
     background-repeat: no-repeat;
     width: 16px;
-        height: 16px;
+    height: 16px;
     background-position: center;
     background-size: 16px;
     left: 4px;
@@ -3236,6 +3311,7 @@ ul.plansdetailCount li {
     border: 1px solid var(--libertyBlue_clr);
     // background-color: var(--libertyBlue_clr);
 }
+
 .prefer_method input[type='radio']:checked+label::before {
     color: var(--libertyBlue_clr);
 }
@@ -3244,21 +3320,33 @@ ul.plansdetailCount li {
     background-image: url('/assets/images/radioChecked.svg');
     background-repeat: no-repeat;
     width: 16px;
-        height: 16px;
+    height: 16px;
     background-position: center;
     background-size: 16px;
     left: 4px;
 
 }
+
 .prefer_method input[type='radio']:checked+label {
     color: var(--libertyBlue_clr);
     font-weight: 500;
     /* Change to your desired color */
 }
 
-.demoSuccessfullyscheduled_sec{
+.demoSuccessfullyscheduled_sec {
     padding: 80px 0px;
 }
+
+.blogTitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.latestBlog_sec{
+    padding: 50px 0px;
+}
+
 @media (max-width: 767px),
 (min-width: 577px) and (max-width: 768px) {
 
@@ -4069,10 +4157,21 @@ ul.plansdetailCount li {
     .comparePlans_sec {
         padding: 0px 0 80px;
     }
+.blackHeader nav{
+    display: block !important;
+}
+.blackHeader nav .blogTitle {
+    display: block;
+    margin-bottom: 16px;
+}
+.blackHeader nav .blogTitle span{
+    display: none;
+}
 
     .blackHeader h2 {
         font-size: 20px;
-        font-weight: 500;
+        // font-weight: 500;
+        margin-bottom: 8px;
     }
 
     .blackHeader {
