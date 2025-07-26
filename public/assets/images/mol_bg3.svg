@@ -1,0 +1,20 @@
+<svg width="207" height="291" viewBox="0 0 207 291" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.8" filter="url(#filter0_g_848_141)">
+<path d="M103.411 88.0143V4.80762L36 46.221V129.428L103.411 171.221L36.1779 213.014L103.411 254.808L171 213.014V129.808L103.411 88.0143Z" fill="url(#paint0_linear_848_141)"/>
+</g>
+<defs>
+<filter id="filter0_g_848_141" x="0" y="-31.1924" width="207" height="322" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.66666668653488159 0.66666668653488159" numOctaves="3" seed="81" />
+<feDisplacementMap in="shape" scale="72" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect1_texture_848_141">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_848_141" x1="110.218" y1="-66.2824" x2="87.2632" y2="253.643" gradientUnits="userSpaceOnUse">
+<stop stop-color="#65FFFF"/>
+<stop offset="1" stop-color="#A774FF"/>
+</linearGradient>
+</defs>
+</svg>
