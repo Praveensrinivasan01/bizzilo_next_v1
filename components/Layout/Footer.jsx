@@ -204,7 +204,7 @@ const Footer = () => {
                         <h5 className='fontSize16 fontWeight700 nightSkyText_clr mb_16'>Resources</h5>
                         <ul className='footerLink'>
                           <li>
-                            <Link href="#">Blog</Link>
+                            <Link href={'/blog'}>Blog</Link>
                           </li>
                           <li>
                             <Link href="#">Newsletter</Link>
@@ -220,7 +220,7 @@ const Footer = () => {
                         <h5 className='fontSize16 fontWeight700 nightSkyText_clr mb_16'>Company</h5>
                         <ul className='footerLink'>
                           <li>
-                            <Link href="#">About</Link>
+                            <Link href={'/about-us'}>About</Link>
                           </li>
                           <li>
                             <Link href={'/contact-us'}>Contact</Link>

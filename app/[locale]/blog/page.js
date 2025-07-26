@@ -103,26 +103,26 @@ const page = () => {
                             <h3 className='fontSize18 fontWeight500 darkOrchestra_clr mb_32'>Trending</h3>
 
 
-                            <div className='latestItem'>
+                            <div className='trendingItem'>
                                 <span>POS</span>
                                 <h4>Market Trends: What's Next for Investors?</h4>
                                 <p>Miriam’s journey with Odoo began in 2020 when she joined the sales team as an Account Manager for the</p>
                                 <h6>October 14, 2023</h6>
                             </div>
-                            <div className='latestItem'>
+                            <div className='trendingItem'>
                                 <span>E-commerce</span>
                                 <h4>Market Trends: What's Next for Investors?</h4>
                                 <p>Miriam’s journey with Odoo began in 2020 when she joined the sales team as an Account Manager for the</p>
                                 <h6>October 14, 2023</h6>
                             </div>
 
-                            <div className='latestItem'>
+                            <div className='trendingItem'>
                                 <span>POS</span>
                                 <h4>Market Trends: What's Next for Investors?</h4>
                                 <p>Miriam’s journey with Odoo began in 2020 when she joined the sales team as an Account Manager for the</p>
                                 <h6>October 14, 2023</h6>
                             </div>
-                            <div className='latestItem'>
+                            <div className='trendingItem'>
                                 <span>E-commerce</span>
                                 <h4>Market Trends: What's Next for Investors?</h4>
                                 <p>Miriam’s journey with Odoo began in 2020 when she joined the sales team as an Account Manager for the</p>

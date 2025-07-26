@@ -40,7 +40,9 @@ const Header = () => {
                     <button>Resources</button>
                   </li>
                   <li>
-                    <button>About</button>
+                    <Link href={'/about-us'}>
+                      <button>About</button>
+                    </Link>
                   </li>
                   <li>
                     <Link href={'/pricing'

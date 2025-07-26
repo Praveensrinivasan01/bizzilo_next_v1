@@ -21,7 +21,8 @@ const page = () => {
 
 
 
-
+                    <div className='row justifyContent_center'>
+            <div className='col-lg-8'>
                     <h3>Our Story</h3>
 
                     <p className='fontSize16 fontWeight400  nightSkyText_clr textalign_center mb_80'>Founded in 2022, Bizzilo emerged from a shared frustration with the complexities of existing applications required to run a business. Our diverse team of experts pooled their knowledge to develop a solution that streamlines processes, eliminates hassle, and delivers tangible results.</p>
@@ -32,8 +33,8 @@ const page = () => {
 
 
 
-
-
+                        </div>
+                    </div>
 
 
                 </div>
@@ -46,27 +47,27 @@ const page = () => {
 
 
                     <div className='whychooseUsGrid'>
-                    <div className='whychooseUsItem'>
-                        <div>
-                        <h5>Innovation</h5>
-                        <p>We continuously innovate to offer the best solutions.</p>
+                        <div className='whychooseUsItem'>
+                            <div>
+                                <h5>Innovation</h5>
+                                <p>We continuously innovate to offer the best solutions.</p>
                             </div>
-                    </div>
-                    <div className='whychooseUsItem'>
-                        <h5>Commitment</h5>
-                        <p>We are committed to your success and growth</p>
-                    </div>
+                        </div>
+                        <div className='whychooseUsItem'>
+                            <h5>Commitment</h5>
+                            <p>We are committed to your success and growth</p>
+                        </div>
 
 
-                    <div className='whychooseUsItem'>
-                        <h5>User-Centric Approach</h5>
-                        <p>Your needs drive our development and improvements</p>
-                    </div>
+                        <div className='whychooseUsItem'>
+                            <h5>User-Centric Approach</h5>
+                            <p>Your needs drive our development and improvements</p>
+                        </div>
 
-                    <div className='whychooseUsItem'>
-                        <h5>Reliability</h5>
-                        <p>Trust in a robust platform designed for seamless performance</p>
-                    </div>
+                        <div className='whychooseUsItem'>
+                            <h5>Reliability</h5>
+                            <p>Trust in a robust platform designed for seamless performance</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -76,7 +77,7 @@ const page = () => {
                     <h2 className='midnightSkyText_clr fontSize30 fontWeight600 mb_70 textalign_center'>Meet Our Leadership</h2>
                     <div className='row'>
                         <div className='col-lg-3'>
-                            <div className='meetOurLeadership_item'>
+                            <div className='meetOurLeadership_item mobspaceMb_24'>
                                 <div className='meetOurLeadership_img'>
                                     <img src="/assets/images/pyanAmrish.png" alt='pyanAmrish' />
                                 </div>
@@ -88,7 +89,7 @@ const page = () => {
 
 
                         <div className='col-lg-3'>
-                            <div className='meetOurLeadership_item'>
+                            <div className='meetOurLeadership_item mobspaceMb_24'>
                                 <div className='meetOurLeadership_img'>
                                     <img src="/assets/images/satishR.png" alt='satishR' />
                                 </div>
@@ -100,7 +101,7 @@ const page = () => {
 
 
                         <div className='col-lg-3'>
-                            <div className='meetOurLeadership_item'>
+                            <div className='meetOurLeadership_item mobspaceMb_24'>
                                 <div className='meetOurLeadership_img'>
                                     <img src="/assets/images/logeshwaranP.png" alt='logeshwaranP' />
                                 </div>
