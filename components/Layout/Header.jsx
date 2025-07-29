@@ -1,6 +1,8 @@
 'use client';
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Dropdown } from 'react-bootstrap';
+
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   // const [fix, setFix] = useState(false);
@@ -10,6 +12,21 @@ const Header = () => {
   };
 
 
+  const dropdownRef = useRef();
+  const [menuWidth, setMenuWidth] = useState('auto');
+
+  useEffect(() => {
+    const container = document.querySelector('.container');
+    const toggle = dropdownRef.current?.querySelector('.dropdown-toggle');
+
+    if (container && toggle) {
+      const containerRight = container.getBoundingClientRect().right;
+      const toggleLeft = toggle.getBoundingClientRect().left;
+
+      const width = containerRight - toggleLeft;
+      setMenuWidth(`${width}px`);
+    }
+  }, []);
 
 
   return (
@@ -34,7 +51,69 @@ const Header = () => {
               <div className='margin_auto'>
                 <ul>
                   <li>
-                    <button>Solutions</button>
+
+
+                    <Dropdown ref={dropdownRef} className="mega-dropdown">
+                      <Dropdown.Toggle variant="light" id="dropdown-basic">
+                        Solutions
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
+                        <div className='row'>
+                          <div className='col-lg-6'>
+                            <ol className='megaMenulist'>
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img src="/assets/images/shoppingCart_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>Ecommerce</h5>
+                                  <p>Digitize Your Business, Regardless Of Your Industry</p>
+                                </div>
+                              </li>
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img src="/assets/images/pointofSale_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>Point of Sale</h5>
+                                  <p>Transform Your Device Into A Complete POS Solution</p>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img src="/assets/images/inventory_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>Inventory</h5>
+                                  <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img src="/assets/images/accounting_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>Accounting</h5>
+                                  <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
+                                </div>
+                              </li>
+                            </ol>
+                          </div>
+                          <div className='col-lg-6'></div>
+
+                        </div>
+                      </Dropdown.Menu>
+                    </Dropdown>
+
+
+
                   </li>
                   <li>
                     <button>Resources</button>
@@ -46,10 +125,10 @@ const Header = () => {
                   </li>
                   <li>
                     <Link href={'/pricing'
-}>
-                   
-                    <button>Pricing</button>
-                     </Link>
+                    }>
+
+                      <button>Pricing</button>
+                    </Link>
                   </li>
                 </ul>
               </div>
