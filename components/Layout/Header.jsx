@@ -60,7 +60,7 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         <div className='row'>
-                          <div className='col-lg-6'>
+                          <div className='col-lg-6 mobspaceMb_24'>
                             <ol className='megaMenulist'>
                               <li>
                                 <div className='megaMenuIcon'>
@@ -106,7 +106,34 @@ const Header = () => {
                               </li>
                             </ol>
                           </div>
-                          <div className='col-lg-6'></div>
+                          <div className='col-lg-6'>
+                          <div className=''>
+                              <ol className='menuRightsidelist'>
+                                <li>
+                                  <div className='menuRightsideimg'>
+                                    <img src="/assets/images/dropdown_list.png" alt='dropdown_list' />
+                                  </div>
+
+                                  <div>
+                                    <h5>Bizzilo</h5>
+                                    <p>Digitize Your Business, Regardless Of Your Industry</p>
+                                  </div>
+                                </li>
+  
+                                <li>
+                                  <div className='menuRightsideimg'>
+                                    <img src="/assets/images/dropdown_list.png" alt='dropdown_list' />
+                                  </div>
+
+                                  <div>
+                                    <h5>Bizzilo</h5>
+                                    <p>Digitize Your Business, Regardless Of Your Industry</p>
+                                  </div>
+                                </li>
+                              </ol>
+                          </div>
+
+                          </div>
 
                         </div>
                       </Dropdown.Menu>
@@ -116,7 +143,84 @@ const Header = () => {
 
                   </li>
                   <li>
-                    <button>Resources</button>
+                    {/* <button></button> */}
+
+                    <Dropdown ref={dropdownRef} className="mega-dropdown">
+                      <Dropdown.Toggle variant="light" id="dropdown-basic">
+                        Resources
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
+                        <div className='row'>
+                          <div className='col-lg-6 mobspaceMb_24'>
+                            <ol className='megaMenulist'>
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img src="/assets/images/report_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>Blogs</h5>
+                                  <p>Digitize Your Business, Regardless Of Your Industry</p>
+                                </div>
+                              </li>
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img className='billiardRoomFilter' src="/assets/images/report_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>Case Study</h5>
+                                  <p>Transform Your Device Into A Complete POS Solution</p>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div className='megaMenuIcon'>
+                                  <img className='orangeSpiceFilter' src="/assets/images/report_icon.svg" alt='' />
+                                </div>
+
+                                <div>
+                                  <h5>White Paper</h5>
+                                  <p>Transform Your Device Into A Complete Point Of Sale Solution</p>
+                                </div>
+                              </li>
+
+                            
+                            </ol>
+                          </div>
+                          <div className='col-lg-6'>
+                            <div className=''>
+                              <ol className='menuRightsidelist'>
+                                <li>
+                                  <div className='menuRightsideimg'>
+                                    <img src="/assets/images/dropdown_list.png" alt='dropdown_list' />
+                                  </div>
+
+                                  <div>
+                                    <h5>Bizzilo</h5>
+                                    <p>Digitize Your Business, Regardless Of Your Industry</p>
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div className='menuRightsideimg'>
+                                    <img src="/assets/images/dropdown_list.png" alt='dropdown_list' />
+                                  </div>
+
+                                  <div>
+                                    <h5>Bizzilo</h5>
+                                    <p>Digitize Your Business, Regardless Of Your Industry</p>
+                                  </div>
+                                </li>
+                              </ol>
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </li>
                   <li>
                     <Link href={'/about-us'}>
