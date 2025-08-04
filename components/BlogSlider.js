@@ -1,9 +1,14 @@
+"use client";
 import React from 'react'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const BlogSlider = () => {
+const BlogSlider =({blogs}) => {
+
+    console.log(blogs,"blogs==>")
+
+
 
     const NextArrow = ({ onClick }) => (
         <div className="custom-arrow next" onClick={onClick}>
@@ -53,43 +58,33 @@ const BlogSlider = () => {
         ]
     };
 
-  return (
-    <div >
-          <Slider {...blogSlider} className='blogSlider'>
+    const formatDate = (dateStr) => {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
 
-              <div className='blogitem'>
-                  <div className='blogImg'>
-                      <img src="/assets/images/aiFor_lastmile.png" alt='AiForlastmile' />
-                  </div>
-                  <div className='blogContent'>
-                      <h5>Ecom</h5>
-                      <h2>Cultural Shifts: The Impact of Modern Art</h2>
-                      <p>October 10, 2023 - 4 Mins Read</p>
-                  </div>
-              </div>
-              <div className='blogitem'>
-                  <div className='blogImg'>
-                      <img src="/assets/images/small_business.png" alt='Smallbusiness' />
-                  </div>
-                  <div className='blogContent'>
-                      <h5>Ecom</h5>
-                      <h2>Cultural Shifts: The Impact of Modern Art</h2>
-                      <p>October 10, 2023 - 4 Mins Read</p>
-                  </div>
-              </div>
-              <div className='blogitem'>
-                  <div className='blogImg'>
-                      <img src="/assets/images/digital_newlife.png" alt='Digitalnewlife' />
-                  </div>
-                  <div className='blogContent'>
-                      <h5>Ecom</h5>
-                      <h2>Cultural Shifts: The Impact of Modern Art</h2>
-                      <p>October 10, 2023 - 4 Mins Read</p>
-                  </div>
-              </div>
-          </Slider>
+  return (
+    <div>
+      <Slider {...blogSlider} className="blogSlider">
+        {blogs?.map((item, index) => (
+          <div className="blogitem" key={index}>
+            <div className="blogImg">
+              <img src={item?.images?.thumbnail} alt="AiForlastmile" />
+            </div>
+            <div className="blogContent">
+              <h5>{item?.tags[0]}</h5>
+              <h2>{item?.title}</h2>
+              <p>{formatDate(item?.date)} - {item?.estimated_read_time}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
-  )
+  );
 }
 
 export default BlogSlider
