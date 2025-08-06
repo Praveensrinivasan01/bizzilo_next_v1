@@ -4,8 +4,6 @@ import BlogPage from '../../../components/BlogPage';
 const Page = async ({ searchParams }) => {
    const searchQuery = searchParams?.search;
 
-   console.log("searchQuery", searchQuery);
-
   const [blogs, categories] = await Promise.all([
     fetchBlogs(searchQuery),
     fetchCategories(),
