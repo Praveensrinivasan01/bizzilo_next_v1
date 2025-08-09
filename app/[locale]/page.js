@@ -109,6 +109,32 @@ export default  function Home() {
 //     };
 //   }, [windowSize]);
 
+const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const rightContent = rightRef.current;
+    const wrapper = wrapperRef.current;
+
+    gsap.to(rightContent, {
+      y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrapper,
+        start: 'top top',
+        end: () => `+=${rightContent.scrollHeight }`,
+        scrub: true,
+        pin: leftRef.current,
+        anticipatePin: 1,
+      },
+    });
+
+    return () => {
+      ScrollTrigger.kill();
+    };
+  }, []);
+
     console.log(response?.results,"response")
   return (
     <>
@@ -270,10 +296,10 @@ export default  function Home() {
           />
         </div>
       </section>
-      <section className="modulesOverview_sec">
+      <section className="modulesOverview_sec relative z-0 w-full overflow-hidden bg-white flex" ref={wrapperRef}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-lg-5" ref={leftRef} >
               <div className="mobspaceMb_24">
                 <h2 className="fontSize36 fontWeight600 sootytext_clr mb_24">
                   Modules Overview
@@ -285,7 +311,7 @@ export default  function Home() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-7"  ref={rightRef}>
               <div className="modulesOverview_detail">
                 <div className="row">
                   <div className="col-lg-6">
@@ -364,7 +390,7 @@ export default  function Home() {
           </div>
         </div>
       </section>
-      <section className="yourCoreBenefits_sec">
+      <section className="yourCoreBenefits_sec ">
         <div className="container">
           <div className="sectionheader">
             <h2 className="textalign_center">
