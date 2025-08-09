@@ -1,10 +1,12 @@
-import React from 'react'
+'use client';
+import { useState } from 'react'
 import Link from 'next/link';
-
-
-
+import Modal from 'react-bootstrap/Modal';
 
 const Footer = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     // <footer>
     //   <div className='container'>
@@ -162,14 +164,16 @@ const Footer = () => {
             <div className='col-md-9'>
 
               <div className='footerLeftCol'>
-                <img src="/assets/images/footer_logo.png" className='footerlogo' alt='BizziloFooterLogo' />
+                <img src="/assets/images/bizzilo_logo.png" className='footerlogo' alt='BizziloFooterLogo' />
 
                 <div className='row mb_74'>
                   <div className='col-lg-3'>
 
 
                     <div className='latestItem  mb_24'>
-                      <img src="/assets/images/pos_delivery.png" alt='Posdelivery' />
+                      <button onClick={handleShow} className='emptyBtn'>
+                        <img src="/assets/images/pos_delivery.png" alt='Posdelivery' />
+                      </button>
                     </div>
 
                     <div className='latestItem mobspaceMb_24'>
@@ -177,7 +181,61 @@ const Footer = () => {
                     </div>
 
 
+                    <Modal className='modelXl' show={show} onHide={handleClose} centered>
 
+                      <Modal.Body>
+
+
+
+                        <div className='row'>
+                          <div className='col-lg-7'>
+                            <div className='leadMagnetpopup_leftcol'>
+                              <div className='displayFlex alignItem_center gap16 justifyContent_center mb_24'>
+                                <img src="/assets/images/shoppingCart_blueicon.svg" alt='shopping Cart' />
+                                <h5 className='fontSize24 brightNavyBlueText_clr fontWeight600'>Ecommerce</h5>
+                              </div>
+                              <h2>Ecommerce SEO</h2>
+                              <div className='textalign_center leadMagnetpopup_img'>
+                                <img src="/assets/images/ecommerce_seo.png" alt='ecommerce_seo' />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='col-lg-5'>
+                            <div className='leadMagnetpopup_Rightcol'>
+                              <div className='textalign_right'>
+                                <button onClick={handleClose} className='closeBtn'>
+                                  <img src="/assets/images/close_icon.svg" alt='close_icon' />
+                                </button>
+                              </div>
+                              <h5>Ebook</h5>
+                              <p>An In-Depth Resource for Optimizing Your Online Store's SEO</p>
+                              <div className='mb_40'>
+                              <label className='infinityBeyondText_clr fontSize16 fontWeight500 mb_14'>E-mail</label>
+                              <input type="text" className='deutziaWhiteInput' placeholder='example@gmail.com' />
+                              </div>
+
+                              <div className='smallInputCheckbox mb_24'>
+                                <input
+                                  type='checkbox'
+                                  id='Subscribefutureposts'
+                                />
+                                <label htmlFor='Subscribefutureposts'>
+
+                                  <div>Subscribe if you’d like to be notified o future posts</div>
+                                </label>
+                              </div>
+
+
+                              <button className='sherwoodGreenbtn'>Download Now</button>
+                            </div>
+                          </div>
+
+                        </div>
+
+
+                      </Modal.Body>
+
+                    </Modal>
 
 
 
@@ -299,6 +357,11 @@ const Footer = () => {
 
         </div>
       </footer>
+
+
+
+
+
 
 
       <div className='footerQuickAction'>

@@ -238,10 +238,12 @@ const Header = () => {
               </div>
               <div className='displayInlineFlex alignItem_center gap16'>
                 <div>
-                  <Link href={'/account-creation'}>
-                    <button className='mainbutton transparentbtn'>Sign in</button></Link></div>
+                  <Link className='mainbutton transparentbtn textDecoration_unset' href={'/account-creation'}>
+                    Sign in</Link></div>
                 <div>
-                  <button className='mainbutton ruinedSmoresbtn'>Sign Up Now</button>
+                  <Link className='mainbutton ruinedSmoresbtn textDecoration_unset'  href="https://www.bizzilo.com/app/auth/sign-up">
+                Sign Up Now
+                  </Link>
                 </div>
               </div>
             </div>
