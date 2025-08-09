@@ -83,8 +83,10 @@ html {
     --ephemeralBlue_clr: #CBD5E0;
     --deutziaWhite_clr: #F7FAFC;
     --property_clr: #4A5568;
-    --sherwoodGreen_clr:#1C4532;
-    --paleCornflower_clr:#CFD9E0;
+    --sherwoodGreen_clr: #1C4532;
+    --paleCornflower_clr: #CFD9E0;
+    --deepLarkspur_clr: #67728A;
+    --featherSoftBlue_clr: #A0AEC0;
 
     --orangeSpiceFilter: brightness(0) saturate(100%) invert(80%) sepia(73%) saturate(2281%) hue-rotate(317deg) brightness(104%) contrast(94%);
     --billiardRoomFilter: brightness(0) saturate(100%) invert(46%) sepia(14%) saturate(960%) hue-rotate(101deg) brightness(97%) contrast(87%);
@@ -179,6 +181,14 @@ body {
 
 .height100per {
     height: 100%;
+}
+
+.width100per {
+    width: 100%;
+}
+
+.width44px {
+    width: 44px;
 }
 
 .width14px {
@@ -522,8 +532,9 @@ body {
     font-weight: 400;
     outline: unset;
 }
-.deutziaWhiteInput::placeholder{
-color: var(--property_clr);
+
+.deutziaWhiteInput::placeholder {
+    color: var(--property_clr);
 }
 
 /* Input Group Wrapper */
@@ -650,11 +661,13 @@ color: var(--property_clr);
     align-items: center;
 }
 
-.sherwoodGreenbtn{
-padding: 0 24px;
-    height: 60px;
+.sherwoodGreenbtn {
+    padding: 0 24px;
+    // height: 60px;
+    height: 54px;
     border-radius: 20px;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.5;
     outline: unset;
@@ -2153,9 +2166,10 @@ footer {
     background-color: var(--ruinedSmores_clr);
     border-color: var(--ruinedSmores_clr);
 
-} 
-.smallInputCheckbox input:checked+label{
-color: var(--riverStyx_clr);
+}
+
+.smallInputCheckbox input:checked+label {
+    color: var(--riverStyx_clr);
 }
 
 
@@ -2904,6 +2918,12 @@ ul.coveringIndustriesTabs li button:hover {
 .copyRightSec {
     background: var(--veilingWaterfalls_clr);
     padding: 20px 0px;
+}
+
+.copyRightSec nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .footerQuickAction {
@@ -4402,16 +4422,16 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 .leadMagnetpopup_leftcol h2 {
-    font-size: 44px;
+    font-size: 38px;
     line-height: 1.5;
     font-weight: 700;
     color: var(--riverStyx_clr);
     text-align: center;
-    margin-bottom: 44px;
+    margin-bottom: 40px;
 }
 
 .leadMagnetpopup_img img {
-    width: 400px;
+    width: 450px;
 }
 
 .leadMagnetpopup_Rightcol {
@@ -4428,10 +4448,10 @@ ol.menuRightsidelist li>div:last-child {
 
 .leadMagnetpopup_Rightcol p {
     color: var(--riverStyx_clr);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 44px;
+    margin-bottom: 28px;
 }
 
 .closeBtn {
@@ -4442,6 +4462,93 @@ ol.menuRightsidelist li>div:last-child {
     border-radius: 32px;
     background: var(--white_clr);
     box-shadow: 0 2.286px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+.google_btn {
+    background: transparent;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    justify-content: center;
+    border-radius: 20px;
+    height: 60px;
+    color: var(--deepLarkspur_clr);
+    padding: 0px 24px;
+    border: 1px solid var(--ephemeralBlue_clr);
+}
+
+.authentication-divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 32px;
+}
+
+.authentication-divider span {
+    padding-inline: 0.8rem;
+    background-color: var(--white_clr);
+    z-index: 1;
+    font-size: 14px;
+    color: var(--infinityBeyond_clr);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.authentication-divider::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    content: "";
+    background-color: var(--featherSoftBlue_clr);
+}
+
+.legalpolicyList {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+}
+
+.legalpolicyList li a {
+    text-decoration: unset;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--nightSky_clr);
+}
+
+
+.legalPolicy_sec{
+    padding: 80px 0px;
+}
+
+.legalPolicy_sec h2 {
+    font-size: 32px;
+    line-height: 1.5;
+    color: #263a4f;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+.legalPolicy_sec h3,
+.legalPolicy_sec h4 {
+    margin: 0 0 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #263a4f;
+}
+.legalPolicy_sec p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
 }
 
 @media (max-width: 767px),
@@ -5420,13 +5527,52 @@ ol.menuRightsidelist li>div:last-child {
         max-width: 100%;
     }
 
-    .modelXl .modal-body {
-        padding: 0px 16px 24px;
+
+
+    .leadMagnetpopup_leftcol {
+        padding: 24px;
+        border-right: unset;
+        border-bottom: 1px solid var(--ancestralWater_clr);
+    }
+
+    .leadMagnetpopup_Rightcol {
+        padding: 24px;
+    }
+
+    .leadMagnetpopup_leftcol h2 {
+        font-size: 24px;
+    }
+
+    .leadMagnetpopup_img img {
+        width: 100%;
+    }
+
+    .leadMagnetpopup_Rightcol h5 {
+        margin-bottom: 12px;
+        font-size: 24px;
+    }
+
+    .leadMagnetpopup_Rightcol p {
+        margin-bottom: 24px;
+        font-size: 14px;
+
+    }
+
+    .copyRightSec nav {
+        display: block;
+    }
+
+    .legalpolicyList {
+        display: block;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+
+
+
     .modelXl .modal-dialog {
+        margin-bottom: 80px;
         max-width: 100%;
     }
 
@@ -5804,6 +5950,69 @@ ol.menuRightsidelist li>div:last-child {
 
     .transformingBusinesses_sec {
         margin-bottom: 60px;
+    }
+
+
+
+
+    .modelXl .modal-dialog {
+        max-width: 100%;
+    }
+
+
+
+    .leadMagnetpopup_leftcol {
+        padding: 24px;
+        border-right: unset;
+        border-bottom: 1px solid var(--ancestralWater_clr);
+    }
+
+    .leadMagnetpopup_Rightcol {
+        padding: 24px 24px 44px;
+    }
+
+    .leadMagnetpopup_leftcol h2 {
+        font-size: 34px;
+    }
+
+    .leadMagnetpopup_img img {
+        width: 400px;
+    }
+
+    .leadMagnetpopup_Rightcol h5 {
+        margin-bottom: 12px;
+        font-size: 28px;
+    }
+
+    .leadMagnetpopup_Rightcol p {
+        margin-bottom: 24px;
+        font-size: 16px;
+
+    }
+
+    .footerLeftCol {
+        border-right: unset !important;
+        padding: 40px 0 0px;
+    }
+
+    .footerRightCol {
+        padding: 0px;
+    }
+
+    footer {
+        padding-bottom: 40px;
+    }
+
+    .mb_70 {
+        margin-bottom: 40px !important;
+    }
+
+    .mb_80 {
+        margin-bottom: 50px !important;
+    }
+
+    .mb_74 {
+        margin-bottom: 44px;
     }
 }
 
