@@ -1,11 +1,11 @@
 import { fetchBlogs, fetchCategories, fetchTrendingBlogs } from '../../../lib/api';
 import BlogPage from '../../../components/BlogPage';
 
-const Page = async ({ searchParams }) => {
-   const searchQuery = searchParams?.search;
+const Page = async () => {
+//  const searchQuery = searchParams?.search ?? '';
 
   const [blogs, categories] = await Promise.all([
-    fetchBlogs(searchQuery),
+    fetchBlogs(),
     fetchCategories(),
     // fetchTrendingBlogs(),
   ]);
