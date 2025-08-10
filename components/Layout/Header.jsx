@@ -36,7 +36,9 @@ const Header = () => {
           <nav>
             <div className='mobileHeader'>
               <div className='brandlogo'>
+                <Link href={'/'}>
                 <img src="/assets/images/bizzilo_logo.png" alt='BizziloLogo' />
+                </Link>
               </div>
 
               <div className="mobileToggle">

@@ -12,6 +12,15 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+@font-face {
+    font-family: 'tajawalFont';
+    src: url('/font/Tajawal/Tajawal-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
 :root {
     --fontFamily: "Inter", sans-serif;
     --poppinsFontfamily: "Poppins", sans-serif;
@@ -5619,7 +5628,7 @@ ol.menuRightsidelist li>div:last-child {
     }
 
     .mega-dropdown .dropdown-menu.mega-menu {
-        background: #aa3ed00f;
+        background: #aa3ed008;
         width: 100% !important;
         top: 0px !important;
         position: relative !important;
@@ -6103,7 +6112,7 @@ ol.menuRightsidelist li>div:last-child {
         margin-bottom: 44px;
     }
          .mega-dropdown .dropdown-menu.mega-menu {
-             background: #aa3ed00f;
+                    background: #aa3ed008;
              width: 100% !important;
              top: 0px !important;
              position: relative !important;
