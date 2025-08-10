@@ -3726,9 +3726,9 @@ ul.plansdetailCount li {
 }
 
 .browsebycategoriesItem h2 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 8px;
     color: var(--darkOrchestra_clr);
     text-align: left;
@@ -4653,14 +4653,17 @@ ol.menuRightsidelist li>div:last-child {
 
     header ul li {
         margin: 0px;
+        border-bottom: 1px solid #d0d0d047;
     }
 
     header ul li button {
         padding: 12px 24px !important;
-        border-bottom: 1px solid #d0d0d047;
         width: 100%;
         text-align: left;
     }
+        header ul li .dropdown-toggle{
+            text-align: left;
+        }
 
     .mobileToggle button span {
         width: 32px;
@@ -4951,6 +4954,7 @@ ol.menuRightsidelist li>div:last-child {
 
     .blogImg img {
         width: 100%;
+        height: auto;
     }
 
     .blogSlider .slick-list {

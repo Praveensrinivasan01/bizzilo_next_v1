@@ -776,7 +776,7 @@ export default async function Home() {
           <div className="sectionheader">
             <h2 className="textalign_center">Resources</h2>
           </div>
-
+          <div className='textalign_center'>
           <ClientTabs
             defaultActiveKey="blog"
             id="resources-tabs"
@@ -789,6 +789,7 @@ export default async function Home() {
               Case Study
             </ClientTab>
           </ClientTabs>
+          </div>
 
           {/* <div className='textalign_center'>
             <Tabs
