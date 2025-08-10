@@ -60,7 +60,7 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         <div className='row'>
-                          <div className='col-lg-6 mobspaceMb_24'>
+                          <div className='col-lg-6'>
                             <ol className='megaMenulist'>
                               <li>
                                 <div className='megaMenuIcon'>
@@ -152,7 +152,7 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         <div className='row'>
-                          <div className='col-lg-6 mobspaceMb_24'>
+                          <div className='col-lg-6'>
                             <ol className='megaMenulist'>
                               <li>
                                 <div className='megaMenuIcon'>

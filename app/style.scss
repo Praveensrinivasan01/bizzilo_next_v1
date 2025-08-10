@@ -754,7 +754,7 @@ body {
 /* Header Code Start */
 
 header {
-    padding: 22px 0px;
+    padding: 20px 0px;
     background: var(--white_clr);
 }
 
@@ -836,6 +836,51 @@ header ul li a.active {
 
 .mobileToggle {
     display: none;
+}
+
+.mega-dropdown {
+    position: relative;
+}
+
+.mega-dropdown .dropdown-menu.mega-menu {
+    position: absolute !important;
+    top: 20px !important;
+    left: 0;
+    border: none;
+    border-radius: 16px;
+    background: var(--white_clr);
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.25);
+
+    z-index: 999;
+}
+
+.mega-dropdown .dropdown-menu {
+    position: relative;
+    padding: 24px;
+}
+
+.mega-dropdown .dropdown-menu:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    transform: translate(-50%, -100%);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid var(--white_clr);
+    // box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    z-index: 10;
+}
+
+.mega-dropdown.show .dropdown-toggle:after {
+    transform: rotate(180deg) !important;
+}
+.mega-dropdown .dropdown-toggle::after{
+    margin-left: 8px;
+}
+.mega-dropdown .dropdown-item {
+    padding: 6px 0;
 }
 
 /* Header Code end */
@@ -4527,7 +4572,7 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 
-.legalPolicy_sec{
+.legalPolicy_sec {
     padding: 80px 0px;
 }
 
@@ -4538,6 +4583,7 @@ ol.menuRightsidelist li>div:last-child {
     margin: 0 0 10px;
     font-weight: 600;
 }
+
 .legalPolicy_sec h3,
 .legalPolicy_sec h4 {
     margin: 0 0 10px;
@@ -4545,6 +4591,7 @@ ol.menuRightsidelist li>div:last-child {
     line-height: 1.5;
     color: #263a4f;
 }
+
 .legalPolicy_sec p {
     font-size: 16px;
     line-height: 1.5;
@@ -4661,9 +4708,10 @@ ol.menuRightsidelist li>div:last-child {
         width: 100%;
         text-align: left;
     }
-        header ul li .dropdown-toggle{
-            text-align: left;
-        }
+
+    header ul li .dropdown-toggle {
+        text-align: left;
+    }
 
     .mobileToggle button span {
         width: 32px;
@@ -5569,6 +5617,39 @@ ol.menuRightsidelist li>div:last-child {
     .legalpolicyList {
         display: block;
     }
+
+    .mega-dropdown .dropdown-menu.mega-menu {
+        background: #aa3ed00f;
+        width: 100% !important;
+        top: 0px !important;
+        position: relative !important;
+            float: none;
+            width: auto;
+            margin: 0 !important;
+            border: 0;
+            box-shadow: none;
+            transform: unset !important;
+            top: 0px !important;
+
+    }
+         .mega-dropdown .dropdown-toggle:after{
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+         }
+
+    .mega-dropdown .dropdown-menu {
+        padding: 0px;
+    }
+
+    .mega-dropdown .dropdown-menu:after {
+        content: unset;
+    }
+         ol.menuRightsidelist li {
+             margin: 0px;
+         }
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -5641,11 +5722,14 @@ ol.menuRightsidelist li>div:last-child {
 
     header ul li {
         margin: 0px;
+                border-bottom: 1px solid #d0d0d047;
     }
+        header ul li .dropdown-toggle{
+            text-align: left;
+        }
 
     header ul li button {
         padding: 12px 24px !important;
-        border-bottom: 1px solid #d0d0d047;
         width: 100%;
         text-align: left;
     }
@@ -6018,6 +6102,37 @@ ol.menuRightsidelist li>div:last-child {
     .mb_74 {
         margin-bottom: 44px;
     }
+         .mega-dropdown .dropdown-menu.mega-menu {
+             background: #aa3ed00f;
+             width: 100% !important;
+             top: 0px !important;
+             position: relative !important;
+             float: none;
+             width: auto;
+             margin: 0 !important;
+             border: 0;
+             box-shadow: none;
+             transform: unset !important;
+             top: 0px !important;
+    
+         }
+    
+         .mega-dropdown .dropdown-toggle:after {
+             position: absolute;
+             top: 50%;
+             right: 20px;
+         }
+    
+         .mega-dropdown .dropdown-menu {
+             padding: 0px;
+         }
+    
+         .mega-dropdown .dropdown-menu:after {
+             content: unset;
+         }
+                 ol.menuRightsidelist li{
+                    margin: 0px;
+                 }
 }
 
 @media (min-width: 992px) and (max-width: 1026px) {
@@ -6058,46 +6173,3 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 @media (min-width: 1400px) and (max-width: 1535px) {}
-
-
-
-
-
-.mega-dropdown {
-    position: relative;
-}
-
-.mega-dropdown .dropdown-menu.mega-menu {
-    position: absolute !important;
-    top: 20px !important;
-    left: 0;
-    border: none;
-    border-radius: 16px;
-    background: var(--white_clr);
-    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.25);
-
-    z-index: 999;
-}
-
-.mega-dropdown .dropdown-menu {
-    position: relative;
-    padding: 24px;
-}
-
-.mega-dropdown .dropdown-menu:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 5%;
-    transform: translate(-50%, -100%);
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid var(--white_clr);
-    // box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
-    z-index: 10;
-}
-
-.mega-dropdown .dropdown-item {
-    padding: 6px 0;
-}
