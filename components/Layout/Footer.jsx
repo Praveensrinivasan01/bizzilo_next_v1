@@ -456,7 +456,9 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className='fontSize16 fontWeight500 ruinedSmoresText_clr textalign_right'>Make in INDIA</p>
+              <p className='fontSize16 fontWeight500 ruinedSmoresText_clr textalign_right'>
+                Crafted with   <img src="/assets/images/heart_icon.svg" alt='' />    in Chennai
+              </p>
             </div>
           </nav>
         </div>
