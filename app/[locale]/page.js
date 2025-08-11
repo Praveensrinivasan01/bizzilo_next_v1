@@ -1,4 +1,4 @@
-
+"use client"
 // import Image from "next/image";
 // import Flipkart from "../../assets/images/flipkart.png";
 // import Amazon from "../../assets/images/amazon.png";
@@ -13,12 +13,77 @@ import ClientTabs from '../../components/ClientTabs';
 import ClientTab from '../../components/ClientTab';
 import { fetchBlogs } from "../../lib/api";
 
+import { useEffect, useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 
 
+export default  function Home() {
+      const response =  fetchBlogs();
 
-export default async function Home() {
-      const response = await fetchBlogs();
+      //  const rightRef = useRef(null);
+
+//  const containerRef = useRef(null);
+
+//   useEffect(() => {
+//     if (!containerRef.current) return;
+
+//     const cards = containerRef.current.querySelectorAll(".card_one");
+
+//     cards.forEach((card, index) => {
+//       gsap.from(card, {
+//         x: index == 0 ? 800 : index ==1 ? 450 : 100,
+//         y:index == 0 ? -550 : index ==1 ? -580: -550,
+//         rotate : index == 0 ? -30 : index ==1 ? -20 : -5,
+//         opacity: 1,
+//         // duration: 5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           scrub:1,
+//           trigger: card,
+//           start: "bottom 80%",
+//           toggleActions: "play none none reverse",
+//         },
+//       });
+//     });
+
+//     // Cleanup function to kill ScrollTriggers on unmount
+//     return () => {
+//       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//     };
+//   }, []);
+
+  
+const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+     if (window.innerWidth >= 768) {
+    const rightContent = rightRef.current;
+    const wrapper = wrapperRef.current;
+
+    gsap.to(rightContent, {
+      y: () => -(rightContent.scrollHeight - wrapper.scrollHeight + 150),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrapper,
+        start: 'top top',
+        end: () => `+=${rightContent.scrollHeight -100 }`,
+        scrub: true,
+        pin: leftRef?.current,
+        anticipatePin: 1,
+      },
+    });
+
+    return () => {
+      // ScrollTrigger.kill();
+    };
+  }
+  }, []);
 
     console.log(response?.results,"response")
   return (
@@ -117,10 +182,10 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="modulesOverview_sec">
+      <section className="modulesOverview_sec" ref={wrapperRef}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-lg-5" ref={leftRef}>
               <div className="mobspaceMb_24">
                 <h2 className="fontSize36 fontWeight600 sootytext_clr mb_24">
                   Modules Overview
@@ -132,10 +197,10 @@ export default async function Home() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-7" ref={rightRef}>
               <div className="modulesOverview_detail">
-                <div className="row">
-                  <div className="col-lg-6">
+                <div className="row"  ref={rightRef}>
+                  <div className="anm_one col-lg-6">
                     <div className="modulesOverview_item mb_40">
                       <div className="modulesOverview_imgFrame">
                         <img
@@ -152,7 +217,7 @@ export default async function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="anm_one col-lg-6">
                     <div className="modulesOverview_item mb_40">
                       <div className="modulesOverview_imgFrame">
                         <img
@@ -170,7 +235,7 @@ export default async function Home() {
                     </div>
                   </div>
 
-                  <div className="col-lg-6">
+                  <div className="anm_one col-lg-6">
                     <div className="modulesOverview_item mobspaceMb_24">
                       <div className="modulesOverview_imgFrame">
                         <img
@@ -188,7 +253,7 @@ export default async function Home() {
                     </div>
                   </div>
 
-                  <div className="col-lg-6">
+                  <div className="anm_one col-lg-6">
                     <div className="modulesOverview_item">
                       <div className="modulesOverview_imgFrame">
                         <img

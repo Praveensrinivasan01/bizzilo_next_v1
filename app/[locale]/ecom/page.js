@@ -1,17 +1,76 @@
 "use client";
 
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from 'next/link'
 import React from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 const page = () => {
+
+
+    // useEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+
+    //     // const arr = ["+=110%", "+=60%", "top +=0px"];
+    //     const arr = ["+=100%", "+80%", "+=0px"];
+    //     // Get all the cards
+    //     const panels = gsap.utils.toArray(".advanceFeatures_item");
+    //     console.log("Panels array length:", panels.length);
+
+    //     // Set each card to overlap the previous
+    //     panels.forEach((panel, i) => {
+    //         gsap.to(panel, {
+    //             scrollTrigger: {
+    //                 trigger: panel,
+    //                 start: "top 10%",
+    //                 end: arr[i],
+    //                 pin: true,
+    //                 scrub: true,
+    //                 pinSpacing: false, // important for overlap
+    //                 markers: true, // remove in production
+    //             }
+    //         });
+    //     });
+    // }, []);
+useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Kill any old triggers
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  // Only run animation if desktop
+  if (window.innerWidth >= 768) {
+    const panels = gsap.utils.toArray(".advanceFeatures_item");
+    const arr = ["+=100%", "+=55%", "+=0%"];
+
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        end: arr[i],
+        pin: true,
+        scrub: true,
+        pinSpacing: false,
+        // markers: true,
+      });
+    });
+  }
+
+  return () => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  };
+}, []);
+
+
     return (
         <>
             <section className='ecomBnr'>
                 <div className='container'>
                     <div className='ecomBnrHeader'>
                         {/* <div> */}
-                            <h2>Ecommerce</h2>
+                        <h2>Ecommerce</h2>
                         {/* </div> */}
                         {/* <div>
                             <ul>
@@ -367,7 +426,7 @@ const page = () => {
                             </div>
                             <div className='col-lg-5'>
 
-                                <img src="/assets/images/shippingZone.png" alt='Shipping Zone' /> 
+                                <img src="/assets/images/shippingZone.png" alt='Shipping Zone' />
                             </div>
                         </div>
 
@@ -382,7 +441,7 @@ const page = () => {
                                 <p>Different shipping zones may have varying shipping rates or methods based on their distance from the shipping origin</p>
                             </div>
                             <div className='col-lg-5'>
-                                <img src="/assets/images/Shipping calculator.png" alt='Shipping calculator' /> 
+                                <img src="/assets/images/Shipping calculator.png" alt='Shipping calculator' />
                             </div>
                         </div>
                     </div>

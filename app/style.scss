@@ -6177,3 +6177,14 @@ ol.menuRightsidelist li>div:last-child {
 }
 
 @media (min-width: 1400px) and (max-width: 1535px) {}
+
+.megaMenuLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.megaMenuLink:hover {
+//   background-color: rgba(0,0,0,0.05);
+}
