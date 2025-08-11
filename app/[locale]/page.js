@@ -955,7 +955,7 @@ const leftRef = useRef(null);
           <div className="sectionheader">
             <h2 className="textalign_center">Resources</h2>
           </div>
-
+          <div className='textalign_center'>
           <ClientTabs
             defaultActiveKey="blog"
             id="resources-tabs"
@@ -968,6 +968,7 @@ const leftRef = useRef(null);
               Case Study
             </ClientTab>
           </ClientTabs>
+          </div>
 
           {/* <div className='textalign_center'>
             <Tabs

@@ -36,7 +36,9 @@ const Header = () => {
           <nav>
             <div className='mobileHeader'>
               <div className='brandlogo'>
+                <Link href={'/'}>
                 <img src="/assets/images/bizzilo_logo.png" alt='BizziloLogo' />
+                </Link>
               </div>
 
               <div className="mobileToggle">
@@ -60,7 +62,7 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         <div className='row'>
-                          <div className='col-lg-6 mobspaceMb_24'>
+                          <div className='col-lg-6'>
                             <ol className='megaMenulist'>
                               <li>
                                 <div className='megaMenuIcon'>
@@ -152,7 +154,7 @@ const Header = () => {
 
                       <Dropdown.Menu className="mega-menu" style={{ width: menuWidth }}>
                         <div className='row'>
-                          <div className='col-lg-6 mobspaceMb_24'>
+                          <div className='col-lg-6'>
                             <ol className='megaMenulist'>
                               <li>
                                 <div className='megaMenuIcon'>
@@ -238,10 +240,12 @@ const Header = () => {
               </div>
               <div className='displayInlineFlex alignItem_center gap16'>
                 <div>
-                  <Link href={'/account-creation'}>
-                    <button className='mainbutton transparentbtn'>Sign in</button></Link></div>
+                  <Link className='mainbutton transparentbtn textDecoration_unset' href={'/account-creation'}>
+                    Sign in</Link></div>
                 <div>
-                  <button className='mainbutton ruinedSmoresbtn'>Sign Up Now</button>
+                  <Link className='mainbutton ruinedSmoresbtn textDecoration_unset'  href="https://www.bizzilo.com/app/auth/sign-up">
+                Sign Up Now
+                  </Link>
                 </div>
               </div>
             </div>

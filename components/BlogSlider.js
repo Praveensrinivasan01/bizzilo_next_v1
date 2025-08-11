@@ -6,10 +6,6 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const BlogSlider =({blogs}) => {
 
-    console.log(blogs,"blogs==>")
-
-
-
     const NextArrow = ({ onClick }) => (
         <div className="custom-arrow next" onClick={onClick}>
             ▶

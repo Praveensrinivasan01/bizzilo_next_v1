@@ -1,10 +1,17 @@
-import React from 'react'
+'use client';
+import { useState } from 'react'
 import Link from 'next/link';
-
-
-
+import Modal from 'react-bootstrap/Modal';
 
 const Footer = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+  const [showPos, setPosShow] = useState(false);
+  const handlePosClose = () => setPosShow(false);
+  const handlePosShow = () => setPosShow(true);
   return (
     // <footer>
     //   <div className='container'>
@@ -162,19 +169,136 @@ const Footer = () => {
             <div className='col-md-9'>
 
               <div className='footerLeftCol'>
-                <img src="/assets/images/footer_logo.png" className='footerlogo' alt='BizziloFooterLogo' />
+                <img src="/assets/images/bizzilo_logo.png" className='footerlogo' alt='BizziloFooterLogo' />
 
                 <div className='row mb_74'>
                   <div className='col-lg-3'>
 
 
                     <div className='latestItem  mb_24'>
-                      <img src="/assets/images/pos_delivery.png" alt='Posdelivery' />
+                      <button onClick={handlePosShow} className='emptyBtn width100per'>
+                        <img src="/assets/images/pos_delivery.png" alt='Posdelivery' />
+                      </button>
                     </div>
 
+
+
                     <div className='latestItem mobspaceMb_24'>
-                      <img src="/assets/images/ai_lastmaildelivery.png" alt='Ailastmaildelivery' />
+                      <button onClick={handleShow} className='emptyBtn width100per'>
+                        <img src="/assets/images/ai_lastmaildelivery.png" alt='Ailastmaildelivery' />
+                      </button>
                     </div>
+                    <Modal className='modelXl' show={showPos} onHide={handlePosClose} centered>
+                      <Modal.Body>
+                        <div className='row'>
+                          <div className='col-lg-7'>
+                            <div className='leadMagnetpopup_leftcol'>
+                              <div className='displayFlex alignItem_center gap16 justifyContent_center mb_24'>
+                                <img src="/assets/images/pointofSale_icon.svg" className='width44px' alt='pointofSale_icon' />
+                                <h5 className='fontSize24 billiardRoomtext_clr fontWeight600'>POS</h5>
+                              </div>
+                              <h2>POS</h2>
+                              <div className='textalign_center leadMagnetpopup_img'>
+                                <img src="/assets/images/ecommerce_seo.png" alt='ecommerce_seo' />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='col-lg-5'>
+                            <div className='leadMagnetpopup_Rightcol'>
+                              <div className='textalign_right'>
+                                <button onClick={handlePosClose} className='closeBtn'>
+                                  <img src="/assets/images/close_icon.svg" alt='close_icon' />
+                                </button>
+                              </div>
+                              <h5>Ebook</h5>
+                              <p>An In-Depth Resource for Optimizing Your Online Store's SEO</p>
+                              <div className='mb_34'>
+                                <label className='infinityBeyondText_clr fontSize16 fontWeight500 mb_14'>E-mail</label>
+                                <input type="text" className='deutziaWhiteInput' placeholder='example@gmail.com' />
+                              </div>
+
+                              <div className='smallInputCheckbox mb_24'>
+                                <input
+                                  type='checkbox'
+                                  id='Subscribefutureposts'
+                                />
+                                <label htmlFor='Subscribefutureposts'>
+
+                                  <div>Subscribe if you’d like to be notified o future posts</div>
+                                </label>
+                              </div>
+
+
+                              <button className='sherwoodGreenbtn'>Download Now</button>
+                              <div className="authentication-divider js-webauthn-login-divider">
+                                <span>OR</span>
+                              </div>
+
+                              <button className='google_btn'>
+                                <img src="/assets/images/google_icon.svg" />
+                                <span>Continue with Google</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </Modal.Body>
+                    </Modal>
+                    <Modal className='modelXl' show={show} onHide={handleClose} centered>
+                      <Modal.Body>
+                        <div className='row'>
+                          <div className='col-lg-7'>
+                            <div className='leadMagnetpopup_leftcol'>
+                              <div className='displayFlex alignItem_center gap16 justifyContent_center mb_24'>
+                                <img src="/assets/images/shoppingCart_blueicon.svg" alt='shopping Cart' />
+                                <h5 className='fontSize24 brightNavyBlueText_clr fontWeight600'>Ecommerce</h5>
+                              </div>
+                              <h2>Ecommerce SEO</h2>
+                              <div className='textalign_center leadMagnetpopup_img'>
+                                <img src="/assets/images/ecommerce_seo.png" alt='ecommerce_seo' />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='col-lg-5'>
+                            <div className='leadMagnetpopup_Rightcol'>
+                              <div className='textalign_right'>
+                                <button onClick={handleClose} className='closeBtn'>
+                                  <img src="/assets/images/close_icon.svg" alt='close_icon' />
+                                </button>
+                              </div>
+                              <h5>Ebook</h5>
+                              <p>An In-Depth Resource for Optimizing Your Online Store's SEO</p>
+                              <div className='mb_34'>
+                                <label className='infinityBeyondText_clr fontSize16 fontWeight500 mb_14'>E-mail</label>
+                                <input type="text" className='deutziaWhiteInput' placeholder='example@gmail.com' />
+                              </div>
+
+                              <div className='smallInputCheckbox mb_24'>
+                                <input
+                                  type='checkbox'
+                                  id='Subscribefutureposts'
+                                />
+                                <label htmlFor='Subscribefutureposts'>
+
+                                  <div>Subscribe if you’d like to be notified o future posts</div>
+                                </label>
+                              </div>
+
+
+                              <button className='sherwoodGreenbtn'>Download Now</button>
+                              <div className="authentication-divider js-webauthn-login-divider">
+                                <span>OR</span>
+                              </div>
+
+                              <button className='google_btn'>
+                                <img src="/assets/images/google_icon.svg" />
+                                <span>Continue with Google</span>
+                              </button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </Modal.Body>
+                    </Modal>
 
 
 
@@ -301,6 +425,11 @@ const Footer = () => {
       </footer>
 
 
+
+
+
+
+
       <div className='footerQuickAction'>
         <div className='container'>
           <div className='displayFlex alignItem_center gap30 justifyContent_center'>
@@ -311,9 +440,30 @@ const Footer = () => {
       </div>
       <div className='copyRightSec'>
         <div className='container'>
-          <p className='fontSize16 fontWeight500 ruinedSmoresText_clr textalign_right'>Make in INDIA</p>
+          <nav>
+            <div>
+              <ul className='legalpolicyList'>
+                <li>
+                  <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link >
+                </li>
+                <li>
+                  <Link href="/terms-and-conditions" target="_blank">Terms and Conditions</Link>
+                </li>
+                <li>
+                  <Link href="/refund-policy" target="_blank">Refund Policy</Link>
+                </li>
+
+              </ul>
+            </div>
+            <div>
+              <p className='fontSize16 fontWeight500 ruinedSmoresText_clr textalign_right'>
+                Crafted with   <img src="/assets/images/heart_icon.svg" alt='' />    in Chennai
+              </p>
+            </div>
+          </nav>
         </div>
       </div>
+
     </>
 
   )
