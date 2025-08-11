@@ -917,10 +917,14 @@ header ul li a.active {
 
 .businessOperationItem {
     width: 337.55px;
-
-    // height: 452.339px;
-
+    position: relative;
 }
+
+
+    .anm_one {
+        left: 100px;
+        bottom: 300px;
+    }
 
 .bizOp_header {
     border-radius: 20px 20px 0px 0px;
@@ -1035,6 +1039,7 @@ header ul li a.active {
 
 .yourCoreBenefits_sec {
     padding: 0px 0px 80px;
+    margin-top: 10vh
 }
 
 .sectionheader {
